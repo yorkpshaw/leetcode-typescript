@@ -1,3 +1,5 @@
+/* https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75 */
+
 function mergeAlternately(word1: string, word2: string): string {
 
     let i: number = 0;
@@ -17,3 +19,11 @@ function mergeAlternately(word1: string, word2: string): string {
 
     return result
 };
+
+/*
+Declare two pointers, both number types, to iterate over each string
+The result is a string that letters concat into
+While iterating through the length of strings...
+Add the first character from word1 as long as 'i<word.length'
+Code will move on and ignore the blocks if the condition of 'i/j<word.length' isn't met
+*/
