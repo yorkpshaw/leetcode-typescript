@@ -21,7 +21,7 @@ class ListNode {
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     let carry = 0;
     const result = new ListNode();
-    let dummy = result;
+    let dummy = result; // Will reference the same object in memory
 
     while (l1 || l2 || carry) {
         const l1Val = l1 ? l1.val : 0;
