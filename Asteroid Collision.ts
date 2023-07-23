@@ -4,19 +4,19 @@ function asteroidCollision(asteroids: number[]): number[] {
     let l = 0;
     let r = 1;
 
-    while (r < asteroids.length) {
+    while (l >= 0 && r < asteroids.length) {
         if (asteroids[l] > 0 && asteroids[r] < 0) {
             if (Math.abs(asteroids[l]) > Math.abs(asteroids[r])) {
                 asteroids.splice(r, 1);
-                r++;
+                // r++; <--- This was a mistake!
             } else if (Math.abs(asteroids[l]) === Math.abs(asteroids[r])) {
                 asteroids.splice(l, 2);
                 l = Math.max(0, l - 1);
-                r = Math.min(l + 1, asteroids.length-1);
+                r = Math.min(l + 1, asteroids.length);
             } else {
                 asteroids.splice(l, 1);
                 l = Math.max(0, l - 1);
-                r = Math.min(l + 1, asteroids.length-1);
+                r = Math.min(l + 1, asteroids.length);
             }
         } else {
             l++;
@@ -25,7 +25,9 @@ function asteroidCollision(asteroids: number[]): number[] {
     }
 
     return asteroids;
+
 };
+
 /*
 There could be a giant asteroid at the end that moves all the way to the left
 Set up a left and right pointer
