@@ -24,5 +24,13 @@ var dailyTemperatures = function(temperatures: number[]) {
 
 /*
 Use a stack to hold the indices
-Loop through array, and another conditional loop inside (While the stack is not empty, and if current temp is greater than temp from stack)
+Loop through array, and another conditional loop inside
+    (While the stack is not empty, and if current temp is greater than temp from top of stack)
+        pop the top of the stack which represents a held index
+        held index's value = i - stackInd
+Push current element into stack after while loop
+
+
+ 0   1   2   3   4   5   6   7
+[73, 74, 75, 71, 69, 72, 76, 73]
 */
